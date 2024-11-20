@@ -270,7 +270,7 @@
     mode: 0644
   notify:
     - Restart kafka systemd
-  when: ansible_os_family == "RedHat" and ansible_distribution_major_version > '6' or ansible_os_family == "Debian" or ansible_os_family == "fedora"
+  when: ansible_os_family == "RedHat" and not ansible_distribution_major_version == '6' or ansible_os_family == "Debian" or ansible_os_family == "fedora"
   tags:
     - kafka_service
 
